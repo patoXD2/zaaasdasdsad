@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Copiar Recursos",
+            "type": "shell",
+            "windows": {
+                "command": "Copy-Item -Recurse -Force 'src/javatro/recursos' 'bin/javatro/' -ErrorAction SilentlyContinue"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build y Copiar Recursos",
+            "dependsOn": [
+                "Copiar Recursos"
+            ],
+            "dependsOrder": "sequence"
+        }
+    ]
+}
